@@ -15,6 +15,7 @@ const MainNavigation = () => {
           component={Screens.ProductPagination}
         />
         <Stack.Screen name="Product" component={Screens.Product} />
+        <Stack.Screen name="Details" component={Screens.Details} />
         <Stack.Screen name="Home" component={Screens.Home} />
       </Stack.Navigator>
     </NavigationContainer>

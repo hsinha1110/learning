@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     resizeMode: 'contain',
   },
 
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: 18,
-    color: 'orange',
+    color: '#FF9800',
     fontWeight: 'bold',
   },
   description: {
@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
   },
   contentContainerStyle: {
     flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   noProduct: { fontSize: 18, fontWeight: '600', marginBottom: 40 },
   error: {

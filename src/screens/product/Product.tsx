@@ -109,7 +109,7 @@ const Product: React.FC = () => {
         <Image
           style={styles.image}
           source={{
-            uri: selectedTab === 'products' ? item?.image : item?.thumbnail,
+            uri: selectedTab === 'products' ? item?.image : item?.images[0],
           }}
         />
         <View style={styles.content}>

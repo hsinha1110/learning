@@ -5,12 +5,13 @@ import {
   TextInput,
   Image,
   ActivityIndicator,
+  Pressable,
 } from 'react-native';
 import React, { FC, useEffect, useState } from 'react';
-import { ProductInfo } from '../../types';
+import { MainStackParamList, ProductInfo } from '../../types';
 import styles from './styles';
 import Button from '../../components/Button/Button';
-
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 let limit = 10;
 
 const ProductPagination: FC = () => {
@@ -21,20 +22,22 @@ const ProductPagination: FC = () => {
   const [error, setError] = useState<string>('');
   const [total, setTotal] = useState(0);
   const [loadingMore, setLoadingMore] = useState(false);
+  const navigation = useNavigation<NavigationProp<MainStackParamList>>();
   const skip = (page - 1) * limit;
 
   // =================== Filter Products ========================== //
   const filterProducts = products.filter((item: ProductInfo) =>
     item.title.toLowerCase().includes(search.toLowerCase()),
   );
+
+  // =================== Get Products ========================== //
   const getProducts = async () => {
     try {
       const response = await fetch(
         `https://dummyjson.com/products?limit=${limit}&skip=${skip}`,
       );
-
       const data = await response.json();
-
+      console.log(data.images, '.....data');
       setTotal(data.total);
 
       if (page === 1) {
@@ -79,16 +82,21 @@ const ProductPagination: FC = () => {
       </View>
     );
   }
+
   useEffect(() => {
     getProducts();
   }, [page]);
+
   const renderItem = ({ item }: { item: ProductInfo }) => {
     return (
-      <View style={styles.card}>
+      <Pressable
+        style={styles.card}
+        onPress={() => navigation.navigate('Details', { item })}
+      >
         <Image
           style={styles.image}
           source={{
-            uri: item?.thumbnail,
+            uri: item?.images[0],
           }}
         />
         <View style={styles.content}>
@@ -100,9 +108,9 @@ const ProductPagination: FC = () => {
           >
             {item.description}
           </Text>
-          <Text style={styles.price}>{item.price}</Text>
+          <Text style={styles.price}>$ {item.price}</Text>
         </View>
-      </View>
+      </Pressable>
     );
   };
   return (
@@ -116,11 +124,18 @@ const ProductPagination: FC = () => {
         style={styles.inputStyle}
       />
       <FlatList
-        showsVerticalScrollIndicator={false}
         data={filterProducts}
         renderItem={renderItem}
-        onEndReachedThreshold={1}
         keyExtractor={item => item.id.toString()}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={
+          filterProducts.length === 0 ? { flexGrow: 1 } : undefined
+        }
+        ListEmptyComponent={() => (
+          <View style={styles.emptyContainer}>
+            <Text style={styles.noProduct}>No Products Found</Text>
+          </View>
+        )}
       />
 
       {products.length < total &&
