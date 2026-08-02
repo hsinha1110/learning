@@ -10,15 +10,24 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
 import { getProductThunk } from '../../redux/thunk/getProductThunk';
+import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
+import Routes from '../../constant/Routes';
+import { MainStackParamList } from '../../types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 const GetProduct: FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const dispatch = useDispatch<AppDispatch>();
+  type NavigationProp = NativeStackNavigationProp<
+    MainStackParamList,
+    typeof Routes.DETAILS
+  >;
+  const navigation = useNavigation<NavigationProp>();
+
   const { GetProducts, loading, error } = useSelector(
     (state: any) => state.getProduct,
   );
-
-  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = GetProducts.reduce((acc: string[], item: any) => {
     if (!acc.includes(item.category)) {
@@ -35,6 +44,7 @@ const GetProduct: FC = () => {
   useEffect(() => {
     dispatch(getProductThunk());
   }, [dispatch]);
+
   categories.unshift('All');
 
   if (loading) {
@@ -54,7 +64,10 @@ const GetProduct: FC = () => {
   }
 
   const renderProduct = ({ item }: any) => (
-    <View style={styles.card}>
+    <Pressable
+      onPress={() => navigation.navigate(Routes.DETAILS, { item })}
+      style={styles.card}
+    >
       <Image source={{ uri: item.thumbnail }} style={styles.image} />
 
       <View style={styles.content}>
@@ -66,7 +79,7 @@ const GetProduct: FC = () => {
 
         <Text style={styles.price}>₹ {item.price}</Text>
       </View>
-    </View>
+    </Pressable>
   );
 
   return (

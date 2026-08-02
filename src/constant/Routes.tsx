@@ -5,5 +5,6 @@ enum Routes {
   DETAILS = 'Details',
   CART = 'Cart',
   GET_PRODUCT = 'GetProduct',
+  
 }
 export default Routes;
