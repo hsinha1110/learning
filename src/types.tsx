@@ -1,3 +1,5 @@
+import Routes from './constant/Routes';
+
 export interface ProductInfo {
   id: number;
   title: string;
@@ -9,7 +11,9 @@ export interface ProductInfo {
 }
 
 export type MainStackParamList = {
-  Home: undefined;
-  ProductPagination: undefined;
-  Details: { item: ProductInfo };
+  [Routes.HOME]: undefined;
+  [Routes.PRODUCT]: undefined;
+  [Routes.PRODUCT_PAGINATION]: undefined;
+  [Routes.DETAILS]: { item: ProductInfo };
+  [Routes.CART]: undefined;
 };

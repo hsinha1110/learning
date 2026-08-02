@@ -11,6 +11,8 @@ import React, { useCallback, useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
 import { useFocusEffect } from '@react-navigation/native';
 import MainNavigation from './src/navigation/MainNavigation';
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 const App = () => {
   // useEffect(() => {
   //   let subscription = setInterval(() => {
@@ -97,7 +99,11 @@ const App = () => {
   //   };
   // }, []);
 
-  return <MainNavigation />;
+  return (
+    <Provider store={store}>
+      <MainNavigation />
+    </Provider>
+  );
 };
 
 export default App;

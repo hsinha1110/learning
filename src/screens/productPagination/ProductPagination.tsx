@@ -12,6 +12,7 @@ import { MainStackParamList, ProductInfo } from '../../types';
 import styles from './styles';
 import Button from '../../components/Button/Button';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
+import Routes from '../../constant/Routes';
 let limit = 10;
 
 const ProductPagination: FC = () => {
@@ -91,7 +92,7 @@ const ProductPagination: FC = () => {
     return (
       <Pressable
         style={styles.card}
-        onPress={() => navigation.navigate('Details', { item })}
+        onPress={() => navigation.navigate(Routes.DETAILS, { item })}
       >
         <Image
           style={styles.image}
