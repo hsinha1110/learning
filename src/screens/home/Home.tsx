@@ -40,6 +40,11 @@ const Home: FC = () => {
     dispatch(getProductThunk({ page, limit: 10 }));
   }, [dispatch, page]);
 
+  useEffect(() => {
+    if (!loading) {
+      setLoadingMore(false);
+    }
+  }, [loading]);
   const renderItem = useCallback(({ item }: any) => {
     return (
       <Pressable
@@ -93,11 +98,6 @@ const Home: FC = () => {
     setPage(prev => prev + 1);
   };
 
-  useEffect(() => {
-    if (!loading) {
-      setLoadingMore(false);
-    }
-  }, [loading]);
   return (
     <View style={styles.container}>
       <TextInput

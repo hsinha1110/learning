@@ -10,7 +10,6 @@ const Cart: FC = () => {
     (total: number, item: any) => total + item.price * item.qty,
     0,
   );
-
   const subtotal = Number(sum.toFixed(2));
   const shipping = cartItems.length > 0 ? 100 : 0;
   const grandTotal = Number((subtotal + shipping).toFixed(2));
