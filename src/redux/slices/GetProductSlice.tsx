@@ -1,15 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getProductThunk } from './thunk/getProductThunk';
+import { getProductThunk } from '../thunk/getProductThunk';
 
 const initialState = {
-  Product: [],
+  GetProducts: [],
   error: null,
   loading: false,
-  page: 1,
-  total: 0,
 } as any;
 
-export const ProductSlice = createSlice({
+export const GetProductSlice = createSlice({
   name: 'Product',
   initialState,
   reducers: {},
@@ -20,15 +18,7 @@ export const ProductSlice = createSlice({
       })
       .addCase(getProductThunk.fulfilled, (state, action) => {
         state.loading = false;
-        const result = [...state.Product];
-        for (const item of action.payload.products) {
-          const exist = result.find((p: any) => p.id === item.id);
-          if (!exist) {
-            result.push(item);
-          }
-        }
-        state.Product = result;
-        state.total = action.payload.total;
+        state.GetProducts = action.payload.products;
       })
       .addCase(getProductThunk.rejected, (state, action) => {
         state.error = action.payload || 'Something went wrong';
@@ -36,4 +26,4 @@ export const ProductSlice = createSlice({
   },
 });
 
-export default ProductSlice.reducer;
+export default GetProductSlice.reducer;

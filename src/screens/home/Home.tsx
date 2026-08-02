@@ -14,9 +14,9 @@ import { AppDispatch } from '../../redux/store';
 import styles from './styles';
 import { MainStackParamList, ProductInfo } from '../../types';
 import Button from '../../components/Button/Button';
-import { addToCart } from '../../redux/CartSlice';
+import { addToCart } from '../../redux/slices/CartSlice';
 import { useNavigation } from '@react-navigation/native';
-import { getProductThunk } from '../../redux/thunk/getProductThunk';
+import { getProductPaginationThunk } from '../../redux/thunk/getProductPaginationThunk';
 import Routes from '../../constant/Routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -37,7 +37,7 @@ const Home: FC = () => {
 
   const navigation = useNavigation<NavigationProp>();
   useEffect(() => {
-    dispatch(getProductThunk({ page, limit: 10 }));
+    dispatch(getProductPaginationThunk({ page, limit: 10 }));
   }, [dispatch, page]);
 
   useEffect(() => {

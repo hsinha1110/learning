@@ -1,6 +1,7 @@
 //============ Async Routes ============================
 
 export const ASYNC_ROUTES = {
+  GET_PRODUCT_PAGINATION: 'getProductPagination',
   GET_PRODUCT: 'getProduct',
 } as const;
 

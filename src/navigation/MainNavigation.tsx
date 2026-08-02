@@ -1,15 +1,14 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import * as Screens from '../screens';
-
 const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="GetProduct">
+        <Stack.Screen name="GetProduct" component={Screens.GetProduct} />
         <Stack.Screen name="Home" component={Screens.Home} />
         <Stack.Screen name="Cart" component={Screens.Cart} />
         <Stack.Screen

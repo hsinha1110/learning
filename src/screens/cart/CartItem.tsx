@@ -6,7 +6,7 @@ import {
   decreaseQty,
   increaseQty,
   removefromCart,
-} from '../../redux/CartSlice';
+} from '../../redux/slices/CartSlice';
 import styles from './styles';
 
 interface Props {
