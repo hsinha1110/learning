@@ -12,13 +12,14 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
 import styles from './styles';
-import { MainStackParamList, ProductInfo } from '../../types';
+import { ProductInfo } from '../../types';
 import Button from '../../components/Button/Button';
 import { addToCart } from '../../redux/slices/CartSlice';
 import { useNavigation } from '@react-navigation/native';
 import { getProductPaginationThunk } from '../../redux/thunk/getProductPaginationThunk';
 import Routes from '../../constant/Routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { MainStackParamList } from '../../navigation/types';
 
 const Home: FC = () => {
   const [search, setSearch] = useState<string>('');

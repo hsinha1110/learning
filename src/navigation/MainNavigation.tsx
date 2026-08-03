@@ -6,19 +6,17 @@ const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="GetProduct">
-        <Stack.Screen name="GetProduct" component={Screens.GetProduct} />
-        <Stack.Screen name="Home" component={Screens.Home} />
-        <Stack.Screen name="Cart" component={Screens.Cart} />
-        <Stack.Screen
-          name="ProductPagination"
-          component={Screens.ProductPagination}
-        />
-        <Stack.Screen name="Product" component={Screens.Product} />
-        <Stack.Screen name="Details" component={Screens.Details} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator initialRouteName="GetProduct">
+      <Stack.Screen name="GetProduct" component={Screens.GetProduct} />
+      <Stack.Screen name="Home" component={Screens.Home} />
+      <Stack.Screen name="Cart" component={Screens.Cart} />
+      <Stack.Screen
+        name="ProductPagination"
+        component={Screens.ProductPagination}
+      />
+      <Stack.Screen name="Product" component={Screens.Product} />
+      <Stack.Screen name="Details" component={Screens.Details} />
+    </Stack.Navigator>
   );
 };
 

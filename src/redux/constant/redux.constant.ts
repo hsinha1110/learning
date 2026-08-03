@@ -3,6 +3,8 @@
 export const ASYNC_ROUTES = {
   GET_PRODUCT_PAGINATION: 'getProductPagination',
   GET_PRODUCT: 'getProduct',
+  LOGIN: 'login',
+  SIGN_UP: 'signUp',
 } as const;
 
 //==================== Thunk Status =====================

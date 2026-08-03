@@ -10,10 +10,3 @@ export interface ProductInfo {
   thumbnail: string;
 }
 
-export type MainStackParamList = {
-  [Routes.HOME]: undefined;
-  [Routes.PRODUCT]: undefined;
-  [Routes.PRODUCT_PAGINATION]: undefined;
-  [Routes.DETAILS]: { item: ProductInfo };
-  [Routes.CART]: undefined;
-};

@@ -4,3 +4,5 @@ export { default as ProductPagination } from '../screens/productPagination/Produ
 export { default as Details } from '../screens/details/Details';
 export { default as Cart } from '../screens/cart/Cart';
 export { default as GetProduct } from '../screens/getproduct/GetProduct';
+export { default as Login } from '../screens/auth/login/Login';
+export { default as SignUp } from '../screens/auth/signup/SignUp';
