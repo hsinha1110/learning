@@ -8,10 +8,11 @@ import {
   Pressable,
 } from 'react-native';
 import React, { FC, useEffect, useState } from 'react';
-import { MainStackParamList, ProductInfo } from '../../types';
+import { ProductInfo } from '../../types';
 import styles from './styles';
 import Button from '../../components/Button/Button';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { MainStackParamList } from '../../navigation/types';
 import Routes from '../../constant/Routes';
 let limit = 10;
 
