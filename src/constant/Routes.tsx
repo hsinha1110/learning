@@ -7,5 +7,6 @@ enum Routes {
   GET_PRODUCT = 'GetProduct',
   LOGIN = 'Login',
   SIGN_UP = 'SignUp',
+  FAVOURITES = 'Favourites',
 }
 export default Routes;

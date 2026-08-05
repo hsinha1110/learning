@@ -1,5 +1,3 @@
-import FetchProducts from './fetchProducts/FetchProducts';
-
 export { default as Home } from '../screens/home/Home';
 export { default as Product } from '../screens/product/Product';
 export { default as ProductPagination } from '../screens/productPagination/ProductPagination';
@@ -9,3 +7,5 @@ export { default as GetProduct } from '../screens/getproduct/GetProduct';
 export { default as Login } from '../screens/auth/login/Login';
 export { default as SignUp } from '../screens/auth/signup/SignUp';
 export { default as FetchProducts } from '../screens/fetchProducts/FetchProducts';
+export { default as GetProducts } from '../screens/getProducts/GetProducts';
+export { default as Favourites } from '../screens/favourites/Favourites';

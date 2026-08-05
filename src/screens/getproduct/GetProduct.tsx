@@ -13,8 +13,8 @@ import { getProductThunk } from '../../redux/thunk/getProductThunk';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import Routes from '../../constant/Routes';
-import { MainStackParamList } from '../../types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { MainStackParamList } from '../../navigation/types';
 
 const GetProduct: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');

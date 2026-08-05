@@ -5,7 +5,9 @@ const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="FetchProducts">
+    <Stack.Navigator initialRouteName="GetProducts">
+      <Stack.Screen name="Favourites" component={Screens.Favourites} />
+      <Stack.Screen name="GetProducts" component={Screens.GetProducts} />
       <Stack.Screen name="FetchProducts" component={Screens.FetchProducts} />
       <Stack.Screen name="GetProduct" component={Screens.GetProduct} />
       <Stack.Screen name="Home" component={Screens.Home} />

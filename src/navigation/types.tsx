@@ -7,6 +7,7 @@ export type MainStackParamList = {
   [Routes.PRODUCT_PAGINATION]: undefined;
   [Routes.DETAILS]: { item: ProductInfo };
   [Routes.CART]: undefined;
+  [Routes.FAVOURITES]: undefined;
 };
 
 export type AuthStackParamList = {
