@@ -40,7 +40,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        {token ? <MainNavigation /> : <AuthNavigation />}
+        {/* {token ? <MainNavigation /> : <AuthNavigation />} */}
+        <MainNavigation />
       </NavigationContainer>
     </Provider>
   );

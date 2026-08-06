@@ -5,8 +5,16 @@ enum Routes {
   DETAILS = 'Details',
   CART = 'Cart',
   GET_PRODUCT = 'GetProduct',
+  GET_PRODUCTS = 'GetProducts',
   LOGIN = 'Login',
   SIGN_UP = 'SignUp',
   FAVOURITES = 'Favourites',
+  POSTS = 'Posts',
+  CHARACTERS_LIST = 'CharacterList',
+  CHARACTERS_LIST_DETAILS = 'CharactersListDetails',
+  USERS = 'Users',
+  RECEIPE = 'Receipe',
+  RECEIPE_DETAILS = 'ReceipeDetails',
+  FAVOURITE = 'Favourite',
 }
 export default Routes;

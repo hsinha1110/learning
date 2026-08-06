@@ -2,21 +2,22 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'orange',
-    padding: 16,
-    borderRadius: 10,
+    backgroundColor: '#FF6B00',
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    justifyContent: 'center',
     alignItems: 'center',
-  },
-
-  disabledButton: {
-    backgroundColor: '#CFCFCF',
-    opacity: 0.7,
   },
 
   buttonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '600',
+  },
+
+  pressed: {
+    opacity: 0.8,
   },
 });
 

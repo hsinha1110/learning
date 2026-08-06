@@ -1,9 +1,9 @@
 import { View, Text, Image } from 'react-native';
 import React, { FC } from 'react';
 import { RouteProp, useRoute } from '@react-navigation/native';
-import { MainStackParamList } from '../../types';
 import styles from './styles';
 import Routes from '../../constant/Routes';
+import { MainStackParamList } from '../../navigation/types';
 
 type DetailsRouteProp = RouteProp<MainStackParamList, Routes.DETAILS>;
 
